@@ -1,113 +1,131 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Questions from "@/components/Questions";
+import { Button } from "@mui/material";
 
 export default function Home() {
+  const borderColor = "#dadce0";
+  const fontCss = "font-['Roboto',sans-serif] text-sm text-[#5f6368]";
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
+    <main className="mx-auto w-[640px] max-w-[90vw]">
+      <form action="" className="w-full">
+        <div
+          className={`w-full border border-solid border-[${borderColor}] rounded-[8px] px-[24px] pt-[22px] pb-[16px] my-[12px] overflow-hidden bg-white`}
+        >
+          <div className="pb-3">
+            <span className="text-[24pt]">Assignment Task</span>
+          </div>
+
+          <div className="relative">
+            <div>
+              <div
+                className={`w-[900px] h-[10px] bg-[#673ab7] absolute right-[-2rem] top-[-82px]`}
+              ></div>
+            </div>
+          </div>
+          <div className="relative">
+            <div>
+              <div
+                className={`w-[900px] absolute border-t-[1px] border-solid border-[${borderColor}] right-[-2rem]`}
+              ></div>
+            </div>
+          </div>
+
+          <div>
+            <div className={`text-[14px] flex items-center justify-between `}>
+              <div className="mt-3 mb-2">
+                <span className={`${fontCss} font-bold`}>
+                  pranaypj13@gmail.com
+                </span>
+                <a href="#" className="text-[#1a73e8] ml-2">
+                  Switch account
+                </a>
+              </div>
+              <div>
+                <svg className="w-[24px] h-[20px] ">
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#5f6368"
+                    d="M10.35 17 16 11.35 14.55 9.9l-4.225 4.225-2.1-2.1L6.8 13.45ZM6.5 20q-2.275                           0-3.887-1.575Q1 16.85 1 14.575q0-1.95 1.175-3.475Q3.35 9.575 5.25                           9.15q.625-2.3 2.5-3.725Q9.625 4 12 4q2.925 0 4.962 2.037Q19 8.075 19                           11q1.725.2 2.863 1.487Q23 13.775 23 15.5q0 1.875-1.312 3.188Q20.375 20                           18.5 20Zm0-2h12q1.05 0 1.775-.725Q21 16.55 21 15.5q0-1.05-.725-1.775Q19.55                           13 18.5 13H17v-2q0-2.075-1.462-3.538Q14.075 6 12 6 9.925 6 8.463 7.462 7                           8.925 7 11h-.5q-1.45 0-2.475 1.025Q3 13.05 3 14.5q0 1.45 1.025 2.475Q5.05                           18 6.5 18Zm5.5-6Z"
+                  />
+                </svg>
+              </div>
+            </div>
+            <p className={`mt-3 mb-3 ${fontCss} font-normal`}>
+              The name and photo associated with your Google account will be
+              recorded when you upload files and submit this form. Your email is
+              not part of your response.
+            </p>
+            <div className="relative">
+              <div>
+                <div
+                  className={`w-[900px] absolute border-t-[1px] border-solid border-[${borderColor}] right-[-2rem]`}
+                ></div>
+              </div>
+            </div>
+            <div className={`text-red-500 pt-3 ${fontCss}`}>
+              <span>* Indicates required question</span>
+            </div>
+          </div>
+        </div>
+
+        <Questions />
+
+        <div>
+          <div className="flex justify-between items-center">
+            <div>
+              <Button
+                sx={{ textTransform: "none" }}
+                className="bg-[#673ab7] px-6 hover:bg-[#7242c5] font-medium"
+                variant="contained"
+              >
+                Submit
+              </Button>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="w-48 h-[10px] bg-[#34a853] rounded-lg"></span>
+              <span className="text-[14px]">Page 1 of 1</span>
+            </div>
+            <div>
+              <Button
+                className="font-medium"
+                sx={{ textTransform: "none", color: "#673ab7" }}
+                variant="text"
+              >
+                Clear form
+              </Button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div>
+        <div className="text-[12px] my-4 flex justify-center items-center">
+          This content is neither created nor endorsed by Google.
+          <a href="#" target="_blank">
+            Report Abuse
+          </a>
+          <a href="https://policies.google.com/terms" target="_blank">
+            Terms of Service
+          </a>
+          <a href="https://policies.google.com/privacy" target="_blank">
+            Privacy Policy
+          </a>
+        </div>
+        <div className="w-full my-6 flex justify-center items-center">
           <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            className="flex items-center"
+            href="//www.google.com/forms/about/?utm_source=product&amp;utm_medium=forms_logo&amp;utm_campaign=forms"
           >
-            By{' '}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
+              src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_dark_clr_74x24px.svg"
+              alt="Google"
               height={24}
-              priority
+              width={74}
             />
+            &nbsp;<span>Forms</span>
           </a>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
